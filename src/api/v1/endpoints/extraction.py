@@ -7,7 +7,7 @@ from fastapi import APIRouter, UploadFile, File, Depends, HTTPException, status,
 from src.models.job import JobCreate, JobUploadResponse, JobStatusResponse, JobStatus
 from src.services.blob_service import BlobStorageService
 from src.services.cosmos_service import CosmosDBService
-from src.main import get_blob_service, get_cosmos_service
+from src.api.dependencies import get_blob_service, get_cosmos_service
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
