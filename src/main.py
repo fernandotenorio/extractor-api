@@ -36,13 +36,6 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# --- Dependency Injection ---
-def get_cosmos_service(request: Request) -> CosmosDBService:
-    return request.app.state.cosmos_service
-
-def get_blob_service(request: Request) -> BlobStorageService:
-    return request.app.state.blob_service
-
 # --- API Routers ---
 app.include_router(extraction_router, prefix="/api/v1/extraction", tags=["Extraction"])
 
